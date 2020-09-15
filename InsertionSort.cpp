@@ -2,23 +2,28 @@
 #include <vector>
 
 template <typename T>
-void InsertionSort(std::vector<T> &vec, bool ascending)
+void insertionSort(std::vector<T> &vec, bool ascending)
 {
     int i, j;
     T key;
 
-    for (j = 1;j < vec.size();j++) {
+    for (j = 1; j < vec.size(); j++)
+    {
         key = vec[j];
         i = j - 1;
 
-        if (ascending) {
-            while (i >= 0 && vec[i] > key) {
+        if (ascending)
+        {
+            while (i >= 0 && vec[i] > key)
+            {
                 vec[i + 1] = vec[i];
                 i = i - 1;
             }
         }
-        else {
-            while (i >= 0 && vec[i] < key) {
+        else
+        {
+            while (i >= 0 && vec[i] < key)
+            {
                 vec[i + 1] = vec[i];
                 i = i - 1;
             }
@@ -29,19 +34,25 @@ void InsertionSort(std::vector<T> &vec, bool ascending)
 
 int main()
 {
-    std::vector<int> vec{ 5,2,4,7,1,3,2,6,-5,10,0 };
+    std::vector<int> vec{5, 2, 4, 7, 1, 3, 2, 6, -5, 10, 0};
 
-    InsertionSort(vec, true);
+    insertionSort(vec, true);
 
-    for (auto item: vec) { std::cout << item << " "; }
+    for (auto item : vec)
+    {
+        std::cout << item << " ";
+    }
     std::cout << std::endl;
 
     /////////////////////////
-    std::vector<double> vec1{ -2.3,0.5,1.6,-10.5,13.69 };
+    std::vector<double> vec1{-2.3, 0.5, 1.6, -10.5, 13.69};
 
-    InsertionSort(vec1, true);
+    insertionSort(vec1, true);
 
-    for (auto item: vec1) { std::cout << item << " "; }
+    for (auto item : vec1)
+    {
+        std::cout << item << " ";
+    }
     std::cout << std::endl;
 
     return 0;
